@@ -3,11 +3,13 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { MongooseModule } from '@nestjs/mongoose';
 import { UsersModule } from './users/users.module';
+import { MealsModule } from './meals/meals.module';
 
 @Module({
   imports: [
     MongooseModule.forRoot('mongodb://127.0.0.1:27017/digital_restaurant'),
     UsersModule,
+    MealsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
