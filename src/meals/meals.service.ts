@@ -1,26 +1,50 @@
 import { Injectable } from '@nestjs/common';
 import { CreateMealDto } from './dto/create-meal.dto';
 import { UpdateMealDto } from './dto/update-meal.dto';
+import { InjectModel } from '@nestjs/mongoose';
+import { Meal } from 'src/schemas/Meal.schema';
+import { Model } from 'mongoose';
 
 @Injectable()
 export class MealsService {
-  create(createMealDto: CreateMealDto) {
-    return 'This action adds a new meal';
+  constructor(@InjectModel(Meal.name) private MealModel: Model<Meal>) {}
+
+  async create(createMealDto: CreateMealDto): Promise<Meal> {
+    const lastMeal = await this.MealModel.findOne().sort({ id: -1 }).exec();
+    const nextId = lastMeal ? +lastMeal.id + 1 : 1;
+
+    const createdMeal = new this.MealModel({
+      ...createMealDto,
+      id: nextId,
+    });
+    return createdMeal.save();
+  }
+
+  async update(
+    id: number,
+    updateMealDto: UpdateMealDto,
+    options?: any,
+  ): Promise<Meal | null> {
+    try {
+      return await this.MealModel.findOneAndUpdate(
+        { id: id },
+        updateMealDto,
+        options,
+      );
+    } catch (error) {
+      throw new Error(`Error updating user with id ${id}: ${error.message}`);
+    }
   }
 
   findAll() {
-    return `This action returns all meals`;
+    return this.MealModel.find();
   }
 
   findOne(id: number) {
-    return `This action returns a #${id} meal`;
-  }
-
-  update(id: number, updateMealDto: UpdateMealDto) {
-    return `This action updates a #${id} meal`;
+    return this.MealModel.findOne({ id: id });
   }
 
   remove(id: number) {
-    return `This action removes a #${id} meal`;
+    return this.MealModel.deleteOne({ id: id });
   }
 }
