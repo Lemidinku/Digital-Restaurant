@@ -17,19 +17,23 @@ export class AuthService {
 
   async signUp(signUpDto: SignupAuthDto): Promise<object> {
     // const { username, phone, password } = signUpDto;
-    const hashedPassword = await bcrypt.hash(signUpDto.password, 15);
+    const hashedPassword = await bcrypt.hash(signUpDto.password, 10);
 
     signUpDto.password = hashedPassword;
     const lastUser = await this.userModel.findOne().sort({ id: -1 }).exec();
     const nextId = lastUser ? +lastUser.id + 1 : 1;
 
-    const createdUser = new this.userModel({
-      ...signUpDto,
-      id: nextId,
-    });
-    createdUser.save();
+    try {
+      const createdUser = new this.userModel({
+        ...signUpDto,
+        id: nextId,
+      });
+      await createdUser.save();
 
-    return { success: true, message: 'User created successfully' };
+      return { success: true, message: 'User created successfully' };
+    } catch (error) {
+      return { success: false, message: error.message };
+    }
   }
 
   async login(loginAuthDto: LoginAuthDto): Promise<object | null> {
