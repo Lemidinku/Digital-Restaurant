@@ -8,10 +8,16 @@ import {
   Delete,
   UsePipes,
   ValidationPipe,
+  UseGuards,
+  Req,
 } from '@nestjs/common';
 import { MealsService } from './meals.service';
 import { CreateMealDto } from './dto/create-meal.dto';
 import { UpdateMealDto } from './dto/update-meal.dto';
+
+import { RolesGuard } from '../auth/roles.guard';
+import { UserRole } from '../enums/roles.enum';
+import { Roles } from '../auth/roles.decorator';
 
 @Controller('meals')
 export class MealsController {
@@ -19,7 +25,10 @@ export class MealsController {
 
   @Post()
   @UsePipes(new ValidationPipe())
-  create(@Body() createMealDto: CreateMealDto) {
+  @UseGuards(RolesGuard)
+  @Roles(UserRole.ADMIN)
+  create(@Body() createMealDto: CreateMealDto, @Req() req: any) {
+    console.log(req.user);
     return this.mealsService.create(createMealDto);
   }
 

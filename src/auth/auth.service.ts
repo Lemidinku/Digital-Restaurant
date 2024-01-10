@@ -54,6 +54,7 @@ export class AuthService {
         id: user.id,
         username: user.username,
         phone: user.phone,
+        roles: user.roles,
       });
       return { success: true, token: token };
     } catch (error) {
