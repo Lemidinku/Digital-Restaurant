@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/x-icon" href="../IMAGES/favicon.png">
+        <title>Starter</title>
+        <link rel="stylesheet" href="../dist/output.css">
+        <style>
+            body {
+                overflow-x: hidden;
+            }
+            #top_logo {
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+            #main-nav {
+                color: #F97350;
+            }
+            #header_main {
+                background-image: url(../IMAGES/abcd.avif);
+            }
+            #order_plus_minus {
+                border: solid;
+                border-width: 2px;
+                border-color: #F97350;
+                border-radius: 2px;
+            }
+            #price {
+                color: #F97350;
+            }
+            #main_navigation {
+                background-color: #F97350;
+            }
+            #body_content {
+                background-color: #E4D5D5;
+            }
+            #order_history {
+                color: #F97350;
+                background-color: white;
+                border: solid;
+                border-color: #F97350;
+                border-radius: 4px;
+                border-width: 2px;
+            }
+            #order_btn {
+                background-color: #F97350;
+                border: solid;
+                border-color: #F97350;
+                border-width: 2px;
+                border-radius: 10px;
+                margin-left: 85px;
+            }
+            #footer {
+                background-color: black;
+            }
+            #terms-conditions {
+                color: #F97350;
+            }
+        </style>
+    </head>
+    <body class="bg-gray-100 font-sans" id="body_content">
+        <header class="text-white">
+            <div class="bg-black">
+                <a href="main-starter.html"><img class="w-24" id="top_logo" src="../IMAGES/Logo-one.png" alt="Logo"></a>
+                <ul class="flex w-screen justify-center items-center text-center font-bold">
+                    <li class="mx-4"><a id="main-nav" href="#home">Home</a></li>
+                    <li class="mx-4"><a href="../checkout.html">Checkout</a></li>
+                </ul>
+            </div>
+            <div id="header_main">
+                <p class="font-bold text-white text-center">Our Menu</p>
+            </div>
+        </header>
+        <nav class="bg-gray-200 p-2" id="main_navigation">
+            <div class="container mx-auto">
+                <ul class="flex w-screen justify-center items-center text-center font-bold">
+                    <li class="mx-4"><a class="text-white underline" href="#" id="menu-nav">Starter</a></li>
+                    <li class="mx-4"><a href="main-breakfast.html">Breakfast</a></li>
+                    <li class="mx-4"><a href="main-lunch.html">Lunch</a></li>
+                    <li class="mx-4"><a href="main-dinner.html">Dinner</a></li>
+                    <li class="mx-4"><a href="main-dessert.html">Dessert</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="flex mt-4">
+            <aside class="w-1/5 pr-4">
+                <div class="bg-white p-4 rounded shadow-md mb-4">
+                    <h2 class="text-xl text-center underline font-semibold mb-2">Filter</h2>
+                    <label class="block text-gray-600">Origin:</label>
+                    <select class="w-full p-2 border rounded-md mt-1">
+                        <option value="1">Ethiopian</option>
+                        <option value="2">French</option>
+                        <option value="3">Asian</option>
+                    </select>
+                    <label class="block text-gray-600">Fasting:</label>
+                    <select class="w-full p-2 border rounded-md mt-1">
+                        <option value="1">Shiro</option>
+                        <option value="2">Tasty Soya</option>
+                        <option value="3">Misir</option>
+                    </select>
+                    <label class="block text-gray-600">Allergies:</label>
+                    <select class="w-full p-2 border rounded-md mt-1">
+                        <option value="1">Milk</option>
+                        <option value="2">Eggs</option>
+                        <option value="3">Peanuts</option>
+                        <option value="1">Soy</option>
+                        <option value="2">Wheat</option>
+                        <option value="3">Tree nuts</option>
+                    </select>
+                </div>
+            </aside>
+            <main class="w-4/5">
+                <div class="mb-4 text-right">
+                    <button class="font-bold p-2 mx-3 rounded-md" id="order_history">Selected Order</button>
+                    <div class="hidden absolute right-0 mt-2 bg-white border rounded-md shadow-md">
+                        <ul class="p-2">
+                            <li><a href="#" class="block px-4 py-2 text-gray-800">Order #1</a></li>
+                            <li><a href="#" class="block px-4 py-2 text-gray-800">Order #2</a></li>
+                            <li><a href="#" class="block px-4 py-2 text-gray-800">Order #3</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="starter" class="flex flex-wrap">
+                    <div class="w-80 mx-5 my-2 bg-white rounded overflow-hidden shadow-lg">
+                        <img class="w-full h-48 object-cover" src="../IMAGES/beef-wellington-tart-173822-1.webp" alt="Beef Wellington Tart">
+                        <div class="px-6 py-4">
+                            <div class="flex items-center justify-between">
+                                <div class="mr-12">
+                                    <p class="font-bold text-xl">Beef Wellington Tart</p>
+                                    <div class="text-gray-700">★★★★★</div>
+                                </div>
+                                <div>
+                                    <div class="flex items-center" id="order_plus_minus">
+                                        <button class="bg-white-300 text-gray-700 px-2 py-1 rounded-l focus:outline-none focus:shadow-outline"> - </button>
+                                        <input type="text" value="1" class="w-10 text-center bg-white-200 border-none focus:outline-none" readonly>
+                                        <button class="bg-white-300 text-gray-700 px-2 py-1 rounded-r focus:outline-none focus:shadow-outline"> + </button>
+                                    </div>
+                                    <p class="font-bold">350<span id="price">ETB</span></p>
+                                </div>  
+                            </div>
+                            <button class="font-bold text-white px-5" id="order_btn">Order</button>
+                        </div>    
+                    </div>
+                    <div class="w-80 mx-5 my-2 bg-white rounded overflow-hidden shadow-lg">
+                        <img class="w-full h-48 object-cover" src="../IMAGES/tuna.jpg" alt="Tuna Empanadillas">
+                        <div class="px-6 py-4">
+                            <div class="flex items-center justify-between">
+                                <div class="mr-12">
+                                    <p class="font-bold text-xl">Tuna Empanadillas</p>
+                                    <div class="text-gray-700">★★★★★</div>
+                                </div>
+                                <div>
+                                    <div class="flex items-center" id="order_plus_minus">
+                                        <button class="bg-white-300 text-gray-700 px-2 py-1 rounded-l focus:outline-none focus:shadow-outline"> - </button>
+                                        <input type="text" value="1" class="w-10 text-center bg-white-200 border-none focus:outline-none"readonly>
+                                        <button class="bg-white-300 text-gray-700 px-2 py-1 rounded-r focus:outline-none focus:shadow-outline">+</button>
+                                    </div>
+                                    <p class="font-bold">250<span id="price">ETB</span></p>
+                                </div>  
+                            </div>
+                            <button class="font-bold text-white px-5" id="order_btn">Order</button>
+                        </div>    
+                    </div>
+                    <div class="w-80 mx-5 my-2 bg-white rounded overflow-hidden shadow-lg">
+                        <img class="w-full h-48 object-cover" src="../IMAGES/bacon rings.jpeg" alt="Bacon Rings">
+                        <div class="px-6 py-4">
+                            <div class="flex items-center justify-between">
+                                <div class="mr-12">
+                                    <p class="font-bold text-xl">Bacon Rings</p>
+                                    <div class="text-gray-700">★★★★☆</div>
+                                </div>
+                                <div>
+                                    <div class="flex items-center" id="order_plus_minus">
+                                        <button class="bg-white-300 text-gray-700 px-2 py-1 rounded-l focus:outline-none focus:shadow-outline"> - </button>
+                                        <input type="text" value="1" class="w-10 text-center bg-white-200 border-none focus:outline-none" readonly>
+                                        <button class="bg-white-300 text-gray-700 px-2 py-1 rounded-r focus:outline-none focus:shadow-outline"> + </button>
+                                    </div>
+                                    <p class="font-bold">150<span id="price">ETB</span></p>
+                                </div>  
+                            </div>
+                            <button class="font-bold text-white px-5" id="order_btn">Order</button>
+                        </div>    
+                    </div>
+                    <div class="w-80 mx-5 my-2 bg-white rounded overflow-hidden shadow-lg">
+                        <img class="w-full h-48 object-cover" src="../IMAGES/sweet-saganaki_digi_1980x1320-172761-1.jpg" alt="Sweet Fried Saganaki">
+                        <div class="px-6 py-4">
+                            <div class="flex items-center justify-between">
+                                <div class="mr-12">
+                                    <p class="font-bold text-xl">Sweet Fried Saganaki</p>
+                                    <div class="text-gray-700">★★★☆☆</div>
+                                </div>
+                                <div>
+                                    <div class="flex items-center" id="order_plus_minus">
+                                        <button class="bg-white-300 text-gray-700 px-2 py-1 rounded-l focus:outline-none focus:shadow-outline"> - </button>
+                                        <input type="text" value="1" class="w-10 text-center bg-white-200 border-none focus:outline-none" readonly>
+                                        <button class="bg-white-300 text-gray-700 px-2 py-1 rounded-r focus:outline-none focus:shadow-outline"> + </button>
+                                    </div>
+                                    <p class="font-bold">180<span id="price">ETB</span></p>
+                                </div>  
+                            </div>
+                            <button class="font-bold text-white px-5" id="order_btn">Order</button>
+                        </div>    
+                    </div>
+                    <div class="w-80 mx-5 my-2 bg-white rounded overflow-hidden shadow-lg">
+                        <img class="w-full h-48 object-cover" src="../IMAGES/blooming-onion-97352-1.jpeg" alt="Blooming Onion">
+                        <div class="px-6 py-4">
+                            <div class="flex items-center justify-between">
+                                <div class="mr-12">
+                                    <p class="font-bold text-xl">Blooming Onion</p>
+                                    <div class="text-gray-700">★★★☆☆</div>
+                                </div>
+                                <div>
+                                    <div class="flex items-center" id="order_plus_minus">
+                                        <button class="bg-white-300 text-gray-700 px-2 py-1 rounded-l focus:outline-none focus:shadow-outline"> - </button>
+                                        <input type="text" value="1" class="w-10 text-center bg-white-200 border-none focus:outline-none"readonly>
+                                        <button class="bg-white-300 text-gray-700 px-2 py-1 rounded-r focus:outline-none focus:shadow-outline">+</button>
+                                    </div>
+                                    <p class="font-bold">70<span id="price">ETB</span></p>
+                                </div>  
+                            </div>
+                            <button class="font-bold text-white px-5" id="order_btn">Order</button>
+                        </div>    
+                    </div>
+                    <div class="w-80 mx-5 my-2 bg-white rounded overflow-hidden shadow-lg">
+                        <img class="w-full h-48 object-cover" src="../IMAGES/bacon-and-cheese-croquettes-74345-1.jpeg" alt="Bacon and Cheese Croquettes">
+                        <div class="px-6 py-4">
+                            <div class="flex items-center justify-between">
+                                <div class="mr-12">
+                                    <p class="font-bold text-xl">Bacon and Cheese Croquettes</p>
+                                    <div class="text-gray-700">★★☆☆☆</div>
+                                </div>
+                                <div>
+                                    <div class="flex items-center" id="order_plus_minus">
+                                        <button class="bg-white-300 text-gray-700 px-2 py-1 rounded-l focus:outline-none focus:shadow-outline"> - </button>
+                                        <input type="text" value="1" class="w-10 text-center bg-white-200 border-none focus:outline-none" readonly>
+                                        <button class="bg-white-300 text-gray-700 px-2 py-1 rounded-r focus:outline-none focus:shadow-outline"> + </button>
+                                    </div>
+                                    <p class="font-bold">220<span id="price">ETB</span></p>
+                                </div>  
+                            </div>
+                            <button class="font-bold text-white px-5" id="order_btn">Order</button>
+                        </div>    
+                    </div>
+                    <div class="w-80 mx-5 my-2 bg-white rounded overflow-hidden shadow-lg">
+                        <img class="w-full h-48 object-cover" src="../IMAGES/beef-potato-curry-puffs-87552-1.jpeg" alt="Beef and Potato Curry Puffs">
+                        <div class="px-6 py-4">
+                            <div class="flex items-center justify-between">
+                                <div class="mr-12">
+                                    <p class="font-bold text-xl">Beef and Potato Curry Puffs</p>
+                                    <div class="text-gray-700">★★★☆☆</div>
+                                </div>
+                                <div>
+                                    <div class="flex items-center" id="order_plus_minus">
+                                        <button class="bg-white-300 text-gray-700 px-2 py-1 rounded-l focus:outline-none focus:shadow-outline"> - </button>
+                                        <input type="text" value="1" class="w-10 text-center bg-white-200 border-none focus:outline-none" readonly>
+                                        <button class="bg-white-300 text-gray-700 px-2 py-1 rounded-r focus:outline-none focus:shadow-outline"> + </button>
+                                    </div>
+                                    <p class="font-bold">195<span id="price">ETB</span></p>
+                                </div>  
+                            </div>
+                            <button class="font-bold text-white px-5" id="order_btn">Order</button>
+                        </div>    
+                    </div>
+                    <div class="w-80 mx-5 my-2 bg-white rounded overflow-hidden shadow-lg">
+                        <img class="w-full h-48 object-cover" src="../IMAGES/prosciutto-wrapped-prawns-86120-1.jpeg" alt="Prosciutto Wrapped Prawns">
+                        <div class="px-6 py-4">
+                            <div class="flex items-center justify-between">
+                                <div class="mr-12">
+                                    <p class="font-bold text-xl">Prosciutto Wrapped Prawns</p>
+                                    <div class="text-gray-700">★★★★☆</div>
+                                </div>
+                                <div>
+                                    <div class="flex items-center" id="order_plus_minus">
+                                        <button class="bg-white-300 text-gray-700 px-2 py-1 rounded-l focus:outline-none focus:shadow-outline"> - </button>
+                                        <input type="text" value="1" class="w-10 text-center bg-white-200 border-none focus:outline-none"readonly>
+                                        <button class="bg-white-300 text-gray-700 px-2 py-1 rounded-r focus:outline-none focus:shadow-outline">+</button>
+                                    </div>
+                                    <p class="font-bold">275<span id="price">ETB</span></p>
+                                </div>  
+                            </div>
+                            <button class="font-bold text-white px-5" id="order_btn">Order</button>
+                        </div>    
+                    </div>
+                    <div class="w-80 mx-5 my-2 bg-white rounded overflow-hidden shadow-lg">
+                        <img class="w-full h-48 object-cover" src="../IMAGES/buffalo-wings-82702-1.jpeg" alt="Buffalo Wings">
+                        <div class="px-6 py-4">
+                            <div class="flex items-center justify-between">
+                                <div class="mr-12">
+                                    <p class="font-bold text-xl">Buffalo Wings</p>
+                                    <div class="text-gray-700">★★★★★</div>
+                                </div>
+                                <div>
+                                    <div class="flex items-center" id="order_plus_minus">
+                                        <button class="bg-white-300 text-gray-700 px-2 py-1 rounded-l focus:outline-none focus:shadow-outline"> - </button>
+                                        <input type="text" value="1" class="w-10 text-center bg-white-200 border-none focus:outline-none" readonly>
+                                        <button class="bg-white-300 text-gray-700 px-2 py-1 rounded-r focus:outline-none focus:shadow-outline"> + </button>
+                                    </div>
+                                    <p class="font-bold">115<span id="price">ETB</span></p>
+                                </div>  
+                            </div>
+                            <button class="font-bold text-white px-5" id="order_btn">Order</button>
+                        </div>    
+                    </div>
+                    <div class="w-80 mx-5 my-2 bg-white rounded overflow-hidden shadow-lg">
+                        <img class="w-full h-48 object-cover" src="../IMAGES/haloumi-tomato-and-basil-tart-5136-1.jpeg" alt="Haloumi">
+                        <div class="px-6 py-4">
+                            <div class="flex items-center justify-between">
+                                <div class="mr-12">
+                                    <p class="font-bold text-xl">Haloumi</p>
+                                    <div class="text-gray-700">★★★☆☆</div>
+                                </div>
+                                <div>
+                                    <div class="flex items-center" id="order_plus_minus">
+                                        <button class="bg-white-300 text-gray-700 px-2 py-1 rounded-l focus:outline-none focus:shadow-outline"> - </button>
+                                        <input type="text" value="1" class="w-10 text-center bg-white-200 border-none focus:outline-none" readonly>
+                                        <button class="bg-white-300 text-gray-700 px-2 py-1 rounded-r focus:outline-none focus:shadow-outline"> + </button>
+                                    </div>
+                                    <p class="font-bold">65<span id="price">ETB</span></p>
+                                </div>  
+                            </div>
+                            <button class="font-bold text-white px-5" id="order_btn">Order</button>
+                        </div>    
+                    </div>
+                    <div class="w-80 mx-5 my-2 bg-white rounded overflow-hidden shadow-lg">
+                        <img class="w-full h-48 object-cover" src="../IMAGES/bacon-and-chive-tarts-29848-1.jpeg" alt="Chive Tarts">
+                        <div class="px-6 py-4">
+                            <div class="flex items-center justify-between">
+                                <div class="mr-12">
+                                    <p class="font-bold text-xl">Chive Tarts</p>
+                                    <div class="text-gray-700">★★★★☆</div>
+                                </div>
+                                <div>
+                                    <div class="flex items-center" id="order_plus_minus">
+                                        <button class="bg-white-300 text-gray-700 px-2 py-1 rounded-l focus:outline-none focus:shadow-outline"> - </button>
+                                        <input type="text" value="1" class="w-10 text-center bg-white-200 border-none focus:outline-none"readonly>
+                                        <button class="bg-white-300 text-gray-700 px-2 py-1 rounded-r focus:outline-none focus:shadow-outline">+</button>
+                                    </div>
+                                    <p class="font-bold">75<span id="price">ETB</span></p>
+                                </div>  
+                            </div>
+                            <button class="font-bold text-white px-5" id="order_btn">Order</button>
+                        </div>    
+                    </div>
+                    <div class="w-80 mx-5 my-2 bg-white rounded overflow-hidden shadow-lg">
+                        <img class="w-full h-48 object-cover" src="../IMAGES/bacon-and-egg-tarts-30204-1.jpeg" alt="Egg Tarts">
+                        <div class="px-6 py-4">
+                            <div class="flex items-center justify-between">
+                                <div class="mr-12">
+                                    <p class="font-bold text-xl">Egg Tarts</p>
+                                    <div class="text-gray-700">★★★★★</div>
+                                </div>
+                                <div>
+                                    <div class="flex items-center" id="order_plus_minus">
+                                        <button class="bg-white-300 text-gray-700 px-2 py-1 rounded-l focus:outline-none focus:shadow-outline"> - </button>
+                                        <input type="text" value="1" class="w-10 text-center bg-white-200 border-none focus:outline-none" readonly>
+                                        <button class="bg-white-300 text-gray-700 px-2 py-1 rounded-r focus:outline-none focus:shadow-outline"> + </button>
+                                    </div>
+                                    <p class="font-bold">115<span id="price">ETB</span></p>
+                                </div>  
+                            </div>
+                            <button class="font-bold text-white px-5" id="order_btn">Order</button>
+                        </div>    
+                    </div>
+                    <div class="w-80 mx-5 my-2 bg-white rounded overflow-hidden shadow-lg">
+                        <img class="w-full h-48 object-cover" src="../IMAGES/beef-curry-puffs-80073-1.jpeg" alt="Beef Curry Puffs">
+                        <div class="px-6 py-4">
+                            <div class="flex items-center justify-between">
+                                <div class="mr-12">
+                                    <p class="font-bold text-xl">Beef Curry Puffs</p>
+                                    <div class="text-gray-700">★★★★☆</div>
+                                </div>
+                                <div>
+                                    <div class="flex items-center" id="order_plus_minus">
+                                        <button class="bg-white-300 text-gray-700 px-2 py-1 rounded-l focus:outline-none focus:shadow-outline"> - </button>
+                                        <input type="text" value="1" class="w-10 text-center bg-white-200 border-none focus:outline-none" readonly>
+                                        <button class="bg-white-300 text-gray-700 px-2 py-1 rounded-r focus:outline-none focus:shadow-outline"> + </button>
+                                    </div>
+                                    <p class="font-bold">135<span id="price">ETB</span></p>
+                                </div>  
+                            </div>
+                            <button class="font-bold text-white px-5" id="order_btn">Order</button>
+                        </div>    
+                    </div>
+                    <div class="w-80 mx-5 my-2 bg-white rounded overflow-hidden shadow-lg">
+                        <img class="w-full h-48 object-cover" src="../IMAGES/bruschetta-two-ways-38105-1.jpeg" alt="Bruschetta Two Ways">
+                        <div class="px-6 py-4">
+                            <div class="flex items-center justify-between">
+                                <div class="mr-12">
+                                    <p class="font-bold text-xl">Bruschetta Two Ways</p>
+                                    <div class="text-gray-700">★★★☆☆</div>
+                                </div>
+                                <div>
+                                    <div class="flex items-center" id="order_plus_minus">
+                                        <button class="bg-white-300 text-gray-700 px-2 py-1 rounded-l focus:outline-none focus:shadow-outline"> - </button>
+                                        <input type="text" value="1" class="w-10 text-center bg-white-200 border-none focus:outline-none"readonly>
+                                        <button class="bg-white-300 text-gray-700 px-2 py-1 rounded-r focus:outline-none focus:shadow-outline">+</button>
+                                    </div>
+                                    <p class="font-bold">165<span id="price">ETB</span></p>
+                                </div>  
+                            </div>
+                            <button class="font-bold text-white px-5" id="order_btn">Order</button>
+                        </div>    
+                    </div>
+                    <div class="w-80 mx-5 my-2 bg-white rounded overflow-hidden shadow-lg">
+                        <img class="w-full h-48 object-cover" src="../IMAGES/antipasto-garlic-bread-45790-1.jpeg" alt="Antipasto Garlic Bread">
+                        <div class="px-6 py-4">
+                            <div class="flex items-center justify-between">
+                                <div class="mr-12">
+                                    <p class="font-bold text-xl">Antipasto Garlic Bread</p>
+                                    <div class="text-gray-700">★★★★★</div>
+                                </div>
+                                <div>
+                                    <div class="flex items-center" id="order_plus_minus">
+                                        <button class="bg-white-300 text-gray-700 px-2 py-1 rounded-l focus:outline-none focus:shadow-outline"> - </button>
+                                        <input type="text" value="1" class="w-10 text-center bg-white-200 border-none focus:outline-none" readonly>
+                                        <button class="bg-white-300 text-gray-700 px-2 py-1 rounded-r focus:outline-none focus:shadow-outline"> + </button>
+                                    </div>
+                                    <p class="font-bold">115<span id="price">ETB</span></p>
+                                </div>  
+                            </div>
+                            <button class="font-bold text-white px-5" id="order_btn">Order</button>
+                        </div>    
+                    </div> 
+                </div>    
+            </main>
+        </div>
+        <footer class="bg-black-1600 text-white p-4" id="footer">
+            <p class="font-bold text-2xl" id="terms-conditions">Terms and Conditions</p>
+            <p class="font-bold">The General Terms and Conditions below apply to all offers and transactions of Digi-Rest. Prices are subject to change.</p>
+            <p class="font-bold">The restaurant guarantees that all the products offered meet the standards of the concept.</p>
+            <p class="font-bold">If there are any complaints the management needs to be informed immediately. Appropriate actions will be taken as soon as possible.</p>
+            <p class="font-bold">All prices are including VAT.</p>
+            <p class="font-bold">Methods of payment we accept: Cash, Amole, TeleBirr, CBE birr, Visa, Mastercard and Paypal.</p>     
+        </footer>
+    </body>
+</html>

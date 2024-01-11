@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/x-icon" href="IMAGES/favicon.png">
+        <title>Checkout</title>
+        <link rel="stylesheet" href="dist/output.css">
+        <style>
+            #submit {
+                background-color: #F97350;
+            }
+        </style>
+    </head>
+    <body class="h-full bg-cover bg-center" style="background-image: url('IMAGES/51951042270_78ea1e8590_h.7.jpg');" id="checkout">
+        <div class="h-screen flex items-center justify-center">
+            <div class="bg-white p-8 rounded shadow-md w-96">
+                <h2 class="text-2xl font-semibold mb-6 text-center">Checkout</h2>
+                <form>
+                    <div class="mb-4">
+                        <label for="number" class="block text-sm font-medium text-gray-600">Phone Number <span class="text-red-800">*</span></label>
+                        <input type="text" id="phone_number" class="mt-1 p-2 w-full border rounded-md" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="location" class="block text-sm font-medium text-gray-600">Location <span class="text-red-800">*</span></label>
+                        <input type="text" id="location" class="mt-1 p-2 w-full border rounded-md" required>   
+                    </div>
+        
+                    <div class="mb-4">
+                        <label for="text" class="block text-sm font-medium text-gray-600">Description</label>
+                        <textarea name="textarea" class="mt-1 p-2 w-full border rounded-md" id="checkout_textarea" cols="30" rows="10"></textarea>
+                        <input type="text" id="description" >
+                    </div>
+                    <button class="w-28 text-white font-semibold p-2 rounded-3xl mb-10 mx-4" id="submit">Submit</button>
+                    <button class="w-28 text-white font-semibold p-2 rounded-3xl mb-10 mx-4" id="submit"><a href="main/main-starter.html">Cancel</a></button> 
+                </form>
+            </div>
+        </div>
+    </body>    
+       
+</html>

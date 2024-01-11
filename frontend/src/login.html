@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/x-icon" href="IMAGES/favicon.png">
+        <title>Login Page</title>
+        <link rel="stylesheet" href="dist/output.css">
+        <style>
+            #login_btn {
+                background-color: #F97350;
+            }
+            #sign_with_google_btn {
+                background-color: #F97350;
+            }
+            #google_icon {
+                display: inline-block;
+                width: 20px;
+            }
+        </style>
+    </head>
+    <body class="h-full bg-cover bg-center" style="background-image: url('IMAGES/51951042270_78ea1e8590_h.7.jpg');">
+        <div class="h-screen flex items-center justify-center">
+            <div class="bg-white p-8 rounded shadow-md w-96">
+                <h2 class="text-2xl font-semibold mb-6 text-center">WELCOME</h2>
+                <form>
+                    <div class="mb-4">
+                        <input type="text" id="username" name="username" class="mt-1 p-2 w-full border rounded-md" placeholder="Email" required>
+                    </div>
+                    <div class="mb-4">
+                        <input type="password" id="password" name="password" class="mt-1 p-2 w-full border rounded-md" placeholder="Password" required>
+                    </div>
+                    <button type="submit" class="w-full text-white font-semibold p-2 rounded-3xl" id="login_btn"><a href="main/main-starter.html">Login</a></button>
+                    <div class="w-96 mx-auto">
+                        <p class="inline-block mt-0 text-sm font-sans text-left w-1/2">
+                            <a href="forget.html" class="text-black">Forget Password?</a>
+                        </p>
+                        <p class="inline-block mt-0 text-sm font-sans text-right w-1/4 ml-7">
+                            <a href="signup.html" class="text-black no-underline">Create Account</a>
+                        </p>
+                    </div>
+                    <p class="text-sm font-semibold mb-6 text-center">Social Login</p>
+                    <button class="w-full text-white font-semibold p-2 rounded-3xl" id="sign_with_google_btn"><img src="IMAGES/google_icon.png" alt="Google Icon" class="inline-block mr-2" id="google_icon">
+                    <p class="inline-block">Sign in with Google</p></button>
+                </form>
+            </div>
+        </div>
+    </body>    
+</html>
