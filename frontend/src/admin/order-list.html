@@ -4,8 +4,11 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" type="image/x-icon" href="../IMAGES/favicon.png">
-        <title>Order-list</title>
+        <title>Customer</title>
+        
         <link rel="stylesheet" href="../dist/output.css">
+        <script src="https://cdn.tailwindcss.com"></script>
+    
         <style>
             #main_page {
                 background-color: #E4D5D5;
@@ -15,82 +18,45 @@
                 top: 0;
                 left: 0;
             }
-            #order-list {
+            #customer {
                 width: 200%;
                 background-color: #F97350;
                 color: white;
             }
-            #completed {
-                background-color: #F97350;
-            }
-            #pending {
-                background-color: gray;
-            }
         </style>
     </head>
-    <body class="flex bg-gray-100">
+    <body class="flex">
         <aside class="bg-whte-800 text-black h-screen w-1/5">
             <a href="../main/main-starter.html"><img class="w-24" id="top_logo" src="../IMAGES/Logo-one.png" alt="Logo"></a>
             <div class="flex flex-col items-center justify-between h-full">
                 <nav class="text-left mt-8">
                     <a href="dashboard.html" class="block py-2 px-4 text-sm">Dashboard</a>
-                    <a href="#" class="block py-2 px-4 text-sm font-bold" id="order-list">Order List</a>
-                    <a href="customer.html" class="block py-2 px-4 text-sm">Customer</a>
+                  
+                    <a href="#" class="block py-2 px-4 text-sm font-bold" id="customer">Order List</a>
                     <a href="add_food.html" class="block py-2 px-4 text-sm">Add Food</a>
                 </nav>
             </div>
         </aside>
         <div class="w-4/5" id="main_page">
-            <div class="h-screen flex items-center justify-center">
-                <table class="w-full m-10 text-sm text-center justify-center">
+            <div class="h-screen flex items-center">
+                <table class="w-full m-10 text-center">
                     <thead>
                         <tr class="text-2xl">
-                            <th class="bg-gray-200 border border-slate-600 border-gray p-4">Product Name</th>
-                            <th class="bg-gray-200 border border-slate-600 border-gray p-4">Price</th>
-                            <th class="bg-gray-200 border border-slate-600 border-gray p-4">Order Status</th>
-                            <th class="bg-gray-200 border border-slate-600 border-gray p-4">Date</th>
+                            <th class="bg-gray-200 border border-slate-600 border-gray p-4">Phone.No</th>
+                            <th class="bg-gray-200 border border-slate-600 border-gray p-4">Food</th>
+                            <th class="bg-gray-200 border border-slate-600 border-gray p-4">Total_price</th>
+                            <th class="bg-gray-200 border border-slate-600 border-gray p-4">Location</th>
+                            <th class="bg-gray-200 border border-slate-600 border-gray p-4">Description</th>
+                            <th class="bg-gray-200 border border-slate-600 border-gray p-4">Status</th>
                         </tr>
                     </thead>
-                    <tbody class="bg-white text-xl text-black">
-                        <tr>
-                            <td class="border border-slate-600 border-gray">Enkulal Firfir</td>
-                            <td class="border border-slate-600 border-gray">80 ETB</td>
-                            <td class="border border-slate-600 border-gray"><button class="w-28 text-white font-semibold p-2 rounded-3xl" id="completed">Completed</button></td>
-                            <td class="border border-slate-600 border-gray">10-01-2024</td>
-                        </tr>
-                        <tr>
-                            <td class="border border-slate-600 border-gray">Fatira</td>
-                            <td class="border border-slate-600 border-gray">120 ETB</td>
-                            <td class="border border-slate-600 border-gray"><button class="w-28 text-white font-semibold p-2 rounded-3xl " id="completed">Completed</button></td>
-                            <td class="border border-slate-600 border-gray">10-01-2024</td>
-                        </tr>
-                        <tr>
-                            <td class="border border-slate-600 border-gray">Bula</td>
-                            <td class="border border-slate-600 border-gray">175 ETB</td>
-                            <td class="border border-slate-600 border-gray"><button class="w-28 text-black font-semibold p-2 rounded-3xl " id="pending">Pending</button></td>
-                            <td class="border border-slate-600 border-gray">10-01-2024</td>
-                        </tr>
-                        <tr>
-                            <td class="border border-slate-600 border-gray">Kurt</td>
-                            <td class="border border-slate-600 border-gray">2350 ETB</td>
-                            <td class="border border-slate-600 border-gray"><button class="w-28 text-white font-semibold p-2 rounded-3xl " id="completed">Completed</button></td>
-                            <td class="border border-slate-600 border-gray">10-01-2024</td>
-                        </tr>
-                        <tr>
-                            <td class="border border-slate-600 border-gray">Misir Wot</td>
-                            <td class="border border-slate-600 border-gray">110 ETB</td>
-                            <td class="border border-slate-600 border-gray"><button class="w-28 text-white font-semibold p-2 rounded-3xl " id="completed">Completed</button></td>
-                            <td class="border border-slate-600 border-gray">10-01-2024</td>
-                        </tr>
-                        <tr>
-                            <td class="border border-slate-600 border-gray">Tihilo</td>
-                            <td class="border border-slate-600 border-gray">175 ETB</td>
-                            <td class="border border-slate-600 border-gray"><button class="w-28 text-black font-semibold p-2 rounded-3xl " id="pending">Pending</button></td>
-                            <td class="border border-slate-600 border-gray">10-01-2024</td>
-                        </tr>
+                    <tbody id="table_content" class="bg-white text-xl text-black">
+                        
+                       
                     </tbody>
                 </table>
             </div>     
         </div>
+        <script src="./order-list.js"></script>
     </body>
 </html>
