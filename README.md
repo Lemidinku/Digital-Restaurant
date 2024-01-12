@@ -1,5 +1,7 @@
 # Digital-Restaurant
 
+# Instruction: 
+Check the **client.rest** file to start testing
 
 ## Group Members
 | No | Name | ID No |
