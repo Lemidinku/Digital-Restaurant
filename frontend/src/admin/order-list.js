@@ -63,7 +63,7 @@ function changeContent(content) {
     <td class="border border-slate-600 border-gray">${item.total_price}</td>
     <td class="border border-slate-600 border-gray">${item.location}</td>
     <td class="border border-slate-600 border-gray">${item.remark}</td>
-    <td class="border border-slate-600 border-gray "><button id="done_${item.id}" data-item='${JSON.stringify(item.id)}' onclick="handlerequast(this) class="text-green-500" >Pending</button></td>
+    <td class="border border-slate-600 border-gray "><button id="done_${item.id}" data-item='${JSON.stringify(item)}' onclick="handlerequast(this)" class="text-green-500" >Pending</button></td>
 </tr>
     
     
@@ -79,8 +79,10 @@ return complete}).join('');
 
 function handlerequast(item) {
     console.log("yes")
+    const itemJson = item.getAttribute('data-item');
+    const items = JSON.parse(itemJson);
    
-    const doneButton = document.getElementById(`done_${item}`);
+    const doneButton = document.getElementById(`done_${items.id}`);
     doneButton.textContent = 'Done' 
 
 

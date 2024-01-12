@@ -1,4 +1,4 @@
-document.getElementById('foodForm').addEventListener('submit', async function (event) {
+document.getElementById('foodForm').addEventListener('submit',  function (event) {
     event.preventDefault();
 
     const pictureInput = document.getElementById('picture');
