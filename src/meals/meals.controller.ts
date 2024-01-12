@@ -10,6 +10,7 @@ import {
   ValidationPipe,
   UseGuards,
   Req,
+  Query,
 } from '@nestjs/common';
 import { MealsService } from './meals.service';
 import { CreateMealDto } from './dto/create-meal.dto';
@@ -28,19 +29,20 @@ export class MealsController {
   @UseGuards(RolesGuard)
   @Roles(UserRole.ADMIN)
   create(@Body() createMealDto: CreateMealDto, @Req() req: any) {
-    console.log(req.user);
     return this.mealsService.create(createMealDto);
   }
 
   @Patch(':id')
   @UsePipes(new ValidationPipe())
+  @UseGuards(RolesGuard)
+  @Roles(UserRole.ADMIN)
   update(@Param('id') id: string, @Body() updateMealDto: UpdateMealDto) {
     return this.mealsService.update(+id, updateMealDto, { new: true });
   }
 
   @Get()
-  findAll() {
-    return this.mealsService.findAll();
+  findAll(@Query() queryParams: object) {
+    return this.mealsService.findAll(queryParams);
   }
 
   @Get(':id')
@@ -49,6 +51,8 @@ export class MealsController {
   }
 
   @Delete(':id')
+  @UseGuards(RolesGuard)
+  @Roles(UserRole.ADMIN)
   remove(@Param('id') id: string) {
     return this.mealsService.remove(+id);
   }
