@@ -40,7 +40,7 @@ document.getElementById('submit_form').addEventListener('click',  function (even
             window.location.href = './index.html';   
         }
         }).catch((err) => {   
-            console.log(err)
+            console.log(err.message)
 
     })
    
