@@ -32,10 +32,15 @@ document.getElementById('submit_form').addEventListener('click',  function (even
             'authorization': `${token}`
         } , 
         body: JSON.stringify(formData)
-    }).then((res)=>{
-        localStorage.removeItem('selectedMeal')
-    }).catch((err)=>{
-        console.log(err)
+    }).then(res => res.json())
+        .then((res) => {
+        console.log(res)
+        if (res.success) {
+            localStorage.removeItem('selectedMeal')
+            window.location.href = './index.html';   
+        }
+        }).catch((err) => {   
+            console.log(err)
 
     })
    
