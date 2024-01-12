@@ -9,7 +9,7 @@ import { Model } from 'mongoose';
 export class OrdersService {
   constructor(@InjectModel(Order.name) private OrderModel: Model<Order>) {}
 
-  async create(createOrderDto: CreateOrderDto): Promise<Order> {
+  async create(createOrderDto: CreateOrderDto): Promise<Order | object> {
     const lastOrder = await this.OrderModel.findOne().sort({ id: -1 }).exec();
     const nextId = lastOrder ? +lastOrder.id + 1 : 1;
     try {
@@ -17,9 +17,10 @@ export class OrdersService {
         ...createOrderDto,
         id: nextId,
       });
-      return createdOrder.save();
+      await createdOrder.save();
+      return {success: true}
     } catch (error) {
-      throw new Error(`Error updating user with id: ${error.message}`);
+      throw new Error(`Error ucreating order: ${error.message}`);
     }
   }
 

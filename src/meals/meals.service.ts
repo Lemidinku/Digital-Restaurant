@@ -37,9 +37,12 @@ export class MealsService {
   }
 
   async findAll(queryParams): Promise<any[]> {
+    // console.log('you are in findAll');
+    // console.log('queryParams', queryParams);
     try {
-      const filter: any = {};
+      let filter: any = {};
       let filteredTypes = null;
+      let filteredAllergy = null;
 
       if (queryParams.origin) {
         filter.origin = queryParams.origin;
@@ -50,20 +53,35 @@ export class MealsService {
       }
 
       if (queryParams.allergy) {
-        filter.allergy = queryParams.allergy;
+        // filter.allergies = queryParams.allergies;
+        filteredAllergy = queryParams.allergy;
       }
 
       if (queryParams.types) {
         console.log('queryParams.types', queryParams.types);
-        filteredTypes = [queryParams.types.split(',')];
+        filteredTypes = queryParams.types.split(',');
       }
 
-      const meals = await this.MealModel.find({
-        ...filter,
-        types: { $in: filteredTypes },
-      }).exec();
-
-      // const meals = await this.MealModel.find(filter).exec();
+      let meals: any[] = [];
+      if (queryParams.types && queryParams.allergy) {
+        meals = await this.MealModel.find({
+          ...filter,
+          types: { $in: filteredTypes },
+          allergy: { $ne: filteredAllergy },
+        }).exec();
+      } else if (queryParams.types) {
+        meals = await this.MealModel.find({
+          ...filter,
+          types: { $in: filteredTypes },
+        }).exec();
+      } else if (queryParams.allergy) {
+        meals = await this.MealModel.find({
+          ...filter,
+          allergy: { $ne: filteredAllergy },
+        }).exec();
+      } else {
+        meals = await this.MealModel.find(filter).exec();
+      }
       return meals;
     } catch (error) {
       throw new Error(`Error finding all meals: ${error.message}`);
