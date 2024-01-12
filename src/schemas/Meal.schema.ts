@@ -26,7 +26,7 @@ export class Meal {
   fasting: boolean;
 
   @Prop({ required: false })
-  allergies: string[];
+  allergy: string;
 
   @Prop({ required: true })
   origin: string;
