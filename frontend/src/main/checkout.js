@@ -33,7 +33,7 @@ document.getElementById('submit_form').addEventListener('click',  function (even
         } , 
         body: JSON.stringify(formData)
     }).then((res)=>{
-        // localStorage.removeItem('selectedMeal')
+        localStorage.removeItem('selectedMeal')
     }).catch((err)=>{
         console.log(err)
 
