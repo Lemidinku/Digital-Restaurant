@@ -1,4 +1,10 @@
 let SELECTED_FILTER = {};
+
+let token = localStorage.getItem('token');
+if (!token) {
+  window.location.href = '../login.html';
+}
+
 document.addEventListener('DOMContentLoaded', function () {
   const orderHistoryBtn = document.getElementById('order_history');
   const sidebar = document.getElementById('sidebar');
@@ -117,8 +123,7 @@ async function getMeals(filter) {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
-          authorization:
-            'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywidXNlcm5hbWUiOiJjdXN0b21lcjEiLCJwaG9uZSI6IjA5MTEyMjgwMTEiLCJyb2xlcyI6WyJ1c2VyIl0sImlhdCI6MTcwNTAyMjY5OCwiZXhwIjoxNzA1MTA5MDk4fQ.AeHX2tzdhRPJLkkc0m9KdkyQsOcwhlMgSfsH6u6UYLA',
+          authorization: token,
         },
       },
     );
