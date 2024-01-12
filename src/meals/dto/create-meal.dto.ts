@@ -6,6 +6,7 @@ import {
   IsArray,
   IsIn,
   IsBoolean,
+  IsOptional,
 } from 'class-validator';
 
 // type Allergies = 'Gluten' | ' Lactose' | 'Nuts' | 'Shellfish' | 'None';
@@ -50,6 +51,7 @@ export class CreateMealDto {
   // taking: can we just use the isin option only
 
   @IsNotEmpty()
+  @IsOptional()
   @IsString()
   // @IsIn(['Gluten', 'Lactose', 'Nuts', 'Shellfish'], {
   //   message: 'Invalid allergy type.',
