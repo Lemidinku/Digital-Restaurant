@@ -1,4 +1,8 @@
-document.getElementById('foodForm').addEventListener('submit',  function (event) {
+let token = localStorage.getItem('token');
+if (!token) {
+  window.location.href = '../login.html';
+}
+document.getElementById('foodForm').addEventListener('submit', function (event) {
     event.preventDefault();
 
     const pictureInput = document.getElementById('picture');
@@ -10,7 +14,10 @@ document.getElementById('foodForm').addEventListener('submit',  function (event)
     const fastingSelect = document.getElementById('fastingSelect');
     const allergiesSelect = document.getElementById('allergiesSelect');
     const description = document.getElementById('description')
-    const isFasting = fastingSelect.value ;
+    let isFasting = fastingSelect.value;
+    // const submitBtn = document.getElementById("add_meal_btn")
+    
+    isFasting = isFasting=== 'true'? true:false
     const newItem = {
         name: titleInput.value,
         price: parseFloat(priceInput.value),
@@ -24,7 +31,15 @@ document.getElementById('foodForm').addEventListener('submit',  function (event)
     };
     console.log(newItem)
 
-
+    fetch('http://localhost:5000/meals/',{
+        method:'POST',
+        headers:{
+            'Content-Type':'application/json',
+            'authorization': `${token}`
+        } , 
+        body: JSON.stringify(newItem)
+    }).then(res => res.json())
+        .then((res) => res).catch((err)=>console.log(err))
 
 
     pictureInput.value = '';
@@ -36,3 +51,9 @@ document.getElementById('foodForm').addEventListener('submit',  function (event)
     allergiesSelect.value = 'milk'; 
     description.value = ''
 })
+
+// submitBtn.addEventListener("click", (event) => {
+//     event.preventDefault()
+    
+
+// })

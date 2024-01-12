@@ -5,7 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" type="image/x-icon" href="../../IMAGES/favicon.png">
         <title>Foods</title>
-        <script src="https://cdn.tailwindcss.com"></script>
+        <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+        <link rel="stylesheet" href="../dist/output.css">
         <style>
             #main_page {
                 background-color: #E4D5D5;
@@ -65,24 +66,24 @@
                                         <legend >Kind:</legend>
                                       
                                         <div>
-                                          <input type="checkbox" id="type1" value="starter" name="starter" />
+                                          <input type="checkbox" id="type1" value="Starter" name="starter" />
                                           <label for="type1">starter</label>
                                         </div>
                                       
                                         <div>
-                                          <input type="checkbox" id="type2" value="breakfast" name="breakfast" />
+                                          <input type="checkbox" id="type2" value="Breakfast" name="breakfast" />
                                           <label for="type2">breakfast</label>
                                         </div>
                                         <div>
-                                            <input type="checkbox" id="type3" value="lunch" name="lunch" />
+                                            <input type="checkbox" id="type3" value="Lunch" name="lunch" />
                                             <label for="type3">lunch</label>
                                           </div>
                                           <div>
-                                            <input type="checkbox" id="type4" value="dinner" name="dinner" />
+                                            <input type="checkbox" id="type4" value="Dinner" name="dinner" />
                                             <label for="type4">dinner</label>
                                           </div>
                                           <div>
-                                            <input type="checkbox" id="type5" value="dessert" name="dessert" />
+                                            <input type="checkbox" id="type5" value="Desert" name="dessert" />
                                             <label for="type4">dessert</label>
                                           </div>
                                       </fieldset>
@@ -90,9 +91,12 @@
                                 <div>
                                     <label class="block text-gray-600">Origin:</label>
                                     <select class="w-full p-2 border rounded-md mt-1" id="orginSelect">
-                                        <option value="ethiopia">Ethiopian</option>
-                                        <option value="french">French</option>
-                                        <option value="asian">Asian</option>
+                                        <option value="Ethiopia">Ethiopian</option>
+                                        <option value="French">French</option>
+                                        <option value="Indian">Indian</option>
+                                        <option value="China">China</option>
+                                        <option value="Turkey">Turkey</option>
+
                                     </select>
                                 </div>
                             </div>
@@ -107,12 +111,12 @@
                                 <div>
                                     <label class="block text-gray-600">Allergies:</label>
                                     <select class="w-full p-2 border rounded-md mt-1" id="allergiesSelect">
-                                        <option value="milk">Milk</option>
-                                        <option value="eggs">Eggs</option>
-                                        <option value="peanut">Peanuts</option>
-                                        <option value="soy">Soy</option>
-                                        <option value="wheat">Wheat</option>
-                                        <option value="Tree nuts">Tree nuts</option>
+                                        <option value="">None</option>
+                                        <option value="Milk">Milk</option>
+                                        <option value="Egg">Egg</option>
+                                        <option value="Fish">Fish</option>
+                                        <option value="Wheat">Wheat</option>
+                                        <option value="Beans">Beans</option>
                                     </select>
                                 </div>
                             </div>
