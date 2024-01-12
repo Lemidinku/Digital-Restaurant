@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/x-icon" href="../IMAGES/favicon.png">
+        <title>Foods</title>
+        <link rel="stylesheet" href="../dist/output.css">
+        <style>
+            #main_page {
+                background-color: #E4D5D5;
+            }
+            #top_logo {
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+            #foods {
+                width: 200%;
+                background-color: #F97350;
+                color: white;
+            }
+            #add_food_btn {
+                background-color: #F97350;
+            }
+        </style>
+    </head>
+    <body class="flex bg-gray-100">
+        <aside class="bg-whte-800 text-black h-screen w-1/5">
+            <a href="../main/main-starter.html"><img class="w-24" id="top_logo" src="../IMAGES/Logo-one.png" alt="Logo"></a>
+            <div class="flex flex-col items-center justify-between h-full">
+                <nav class="text-left mt-8">
+                    <a href="dashboard.html" class="block py-2 px-4 text-sm">Dashboard</a>
+                    <a href="order-list.html" class="block py-2 px-4 text-sm">Order List</a>
+                    <a href="customer.html" class="block py-2 px-4 text-sm">Customer</a>
+                    <a href="#" class="block py-2 px-4 text-sm font-bold" id="foods">Add Food</a>
+                </nav>
+            </div>
+        </aside>
+        <div class="w-4/5" id="main_page">  
+            <div class="h-screen flex items-center justify-center">
+                <div class="bg-white p-8 rounded shadow-md w-96">
+                    <h2 class="text-2xl font-semibold mb-6 text-center">ADD A NEW FOOD</h2>
+                    <form>
+                        <div class="mb-4">
+                            <label for="picture" class="block text-gray-600 font-medium">Picture <span class="text-red-800">*</span></label>
+                            <input type="file" id="picture" name="picture" accept="image/*" class="w-full px-4 py-2 border rounded-md" required>
+                            <img id="preview" class="mt-2 max-w-full hidden">
+                        </div>
+                        <div class="mb-4">
+                            <label for="title" class="block text-gray-600 font-medium">Title <span class="text-red-800">*</span</label>
+                            <input type="text" id="title" name="title" placeholder="Enter title" class="w-full px-4 py-2 border rounded-md" required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="price" class="block text-gray-600 font-medium">Price <span class="text-red-800">*</span</label>
+                            <input type="text" id="price" name="price" placeholder="Enter price" class="w-full px-4 py-2 border rounded-md" required>
+                        </div>
+                        <div class="mb-6">
+                            <label for="description" class="block text-gray-600 font-medium">Description <span class="text-red-800">*</span></label>
+                            <textarea id="description" name="description" rows="4" placeholder="Enter description" class="w-full px-4 py-2 border rounded-md" required></textarea>
+                        </div>
+                        <button type="submit" class="w-full text-white font-semibold p-2 rounded-3xl mb-10" id="add_food_btn">Add Food</button>
+                    </form>
+                </div>
+            </div>  
+        </div>
+    </body>
+</html>

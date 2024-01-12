@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/x-icon" href="../IMAGES/favicon.png">
+        <title>Order-list</title>
+        <link rel="stylesheet" href="../dist/output.css">
+        <style>
+            #main_page {
+                background-color: #E4D5D5;
+            }
+            #top_logo {
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+            #dashboard {
+                width: 200%;
+                background-color: #F97350;
+                color: white;
+            }
+            #completed {
+                background-color: #F97350;
+            }
+            #pending {
+                background-color: gray;
+            }
+        </style>
+    </head>
+    <body class="flex bg-gray-100">
+        <aside class="bg-whte-800 text-black h-screen w-1/5">
+            <a href="../main/main-starter.html"><img class="w-24" id="top_logo" src="../IMAGES/Logo-one.png" alt="Logo"></a>
+            <div class="flex flex-col items-center justify-between h-full">
+                <nav class="text-left mt-8">
+                    <a href="#" class="block py-2 px-4 text-sm font-bold" id="dashboard">Dashboard</a>
+                    <a href="order-list.html" class="block py-2 px-4 text-sm">Order List</a>
+                    <a href="customer.html" class="block py-2 px-4 text-sm">Customer</a>
+                    <a href="add_food.html" class="block py-2 px-4 text-sm">Add Food</a> 
+                </nav>
+            </div>
+        </aside>
+        <div class="flex flex-wrap w-4/5" id="main_page">
+            <div class="w-1/4 mx-5 my-2 bg-white rounded overflow-hidden shadow-lg">
+                <img class="w-full h-48 object-cover" src="../IMAGES/190205174453-enkulal-firfir.webp" alt="Enkulal Firfir">
+                <div class="px-6 py-4">
+                    <div class="flex items-center justify-between">
+                        <div class="mr-12">
+                            <p class="font-bold text-xl">Enkulal Firfir</p>
+                        </div>
+                        <div>
+                            <p class="font-bold">80<span id="price">ETB</span></p>
+                        </div>  
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div class="mr-12">
+                            <p>Breakfast</p>
+                        </div>
+                        <button class="edit_btn"><img src="../IMAGES/edit-solid.svg" alt="edit button"></button> 
+                        <button class="delete_btn"><img src="../IMAGES/trash-solid.svg" alt="delete button"></button> 
+                    </div>
+                </div>    
+            </div>
+            <div class="w-1/4 mx-5 my-2 bg-white rounded overflow-hidden shadow-lg">
+                <img class="w-full h-48 object-cover" src="../IMAGES/sambusa.webp" alt="Sambusa">
+                <div class="px-6 py-4">
+                    <div class="flex items-center justify-between">
+                        <div class="mr-12">
+                            <p class="font-bold text-xl">Sambusa</p>
+                        </div>
+                        <div>
+                            <p class="font-bold">20<span id="price">ETB</span></p>
+                        </div>  
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div class="mr-12">
+                            <p>Breakfast</p>
+                        </div>
+                        <button class="edit_btn"><img src="../IMAGES/edit-solid.svg" alt="edit button"></button> 
+                        <button class="delete_btn"><img src="../IMAGES/trash-solid.svg" alt="delete button"></button> 
+                    </div>
+                </div>    
+            </div>
+
+            <div class="w-1/4 mx-5 my-2 bg-white rounded overflow-hidden shadow-lg">
+                <img class="w-full h-48 object-cover" src="../IMAGES/Ambasha-Recipe.webp" alt="Ambasha">
+                <div class="px-6 py-4">
+                    <div class="flex items-center justify-between">
+                        <div class="mr-12">
+                            <p class="font-bold text-xl">Ambasha</p>
+                        </div>
+                        <div>
+                            <p class="font-bold">15<span id="price">ETB</span></p>
+                        </div>  
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div class="mr-12">
+                            <p>Breakfast</p>
+                        </div>
+                        <button class="edit_btn"><img src="../IMAGES/edit-solid.svg" alt="edit button"></button> 
+                        <button class="delete_btn"><img src="../IMAGES/trash-solid.svg" alt="delete button"></button> 
+                    </div>
+                </div>    
+            </div>
+            <div class="w-1/4 mx-5 my-2 bg-white rounded overflow-hidden shadow-lg">
+                <img class="w-full h-48 object-cover" src="../IMAGES/bacon rings.jpeg" alt="Bacon Rings">
+                <div class="px-6 py-4">
+                    <div class="flex items-center justify-between">
+                        <div class="mr-12">
+                            <p class="font-bold text-xl">Bacon Rings</p>
+                        </div>
+                        <div>
+                            <p class="font-bold">150<span id="price">ETB</span></p>
+                        </div>  
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div class="mr-12">
+                            <p>Starter</p>
+                        </div>
+                        <button class="edit_btn"><img src="../IMAGES/edit-solid.svg" alt="edit button"></button> 
+                        <button class="delete_btn"><img src="../IMAGES/trash-solid.svg" alt="delete button"></button> 
+                    </div>
+                </div>    
+            </div>
+
+
+            <div class="w-1/4 mx-5 my-2 bg-white rounded overflow-hidden shadow-lg">
+                <img class="w-full h-48 object-cover" src="../IMAGES/blooming-onion-97352-1.jpeg" alt="Blooming Onion">
+                <div class="px-6 py-4">
+                    <div class="flex items-center justify-between">
+                        <div class="mr-12">
+                            <p class="font-bold text-xl">Blooming Onion</p>
+                        </div>
+                        <div>
+                            <p class="font-bold">70<span id="price">ETB</span></p>
+                        </div>  
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div class="mr-12">
+                            <p>Starter</p>
+                        </div>
+                        <button class="edit_btn"><img src="../IMAGES/edit-solid.svg" alt="edit button"></button> 
+                        <button class="delete_btn"><img src="../IMAGES/trash-solid.svg" alt="delete button"></button> 
+                    </div>
+                </div>    
+            </div>
+            <div class="w-1/4 mx-5 my-2 bg-white rounded overflow-hidden shadow-lg">
+                <img class="w-full h-48 object-cover" src="../IMAGES/buffalo-wings-82702-1.jpeg" alt="Buffalo Wings">
+                <div class="px-6 py-4">
+                    <div class="flex items-center justify-between">
+                        <div class="mr-12">
+                            <p class="font-bold text-xl">Buffalo Wings</p>
+                        </div>
+                        <div>
+                            <p class="font-bold">150<span id="price">ETB</span></p>
+                        </div>  
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div class="mr-12">
+                            <p>Starter</p>
+                        </div>
+                        <button class="edit_btn"><img src="../IMAGES/edit-solid.svg" alt="edit button"></button> 
+                        <button class="delete_btn"><img src="../IMAGES/trash-solid.svg" alt="delete button"></button> 
+                    </div>
+                </div>    
+            </div>
+
+
+            <div class="w-1/4 mx-5 my-2 bg-white rounded overflow-hidden shadow-lg">
+                <img class="w-full h-48 object-cover" src="../IMAGES/190205174453-enkulal-firfir.webp" alt="Enkulal Firfir">
+                <div class="px-6 py-4">
+                    <div class="flex items-center justify-between">
+                        <div class="mr-12">
+                            <p class="font-bold text-xl">Enkulal Firfir</p>
+                        </div>
+                        <div>
+                            <p class="font-bold">80<span id="price">ETB</span></p>
+                        </div>  
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div class="mr-12">
+                            <p>Breakfast</p>
+                        </div>
+                        <button class="edit_btn"><img src="../IMAGES/edit-solid.svg" alt="edit button"></button> 
+                        <button class="delete_btn"><img src="../IMAGES/trash-solid.svg" alt="delete button"></button> 
+                    </div>
+                </div>    
+            </div>
+            <div class="w-1/4 mx-5 my-2 bg-white rounded overflow-hidden shadow-lg">
+                <img class="w-full h-48 object-cover" src="../IMAGES/sambusa.webp" alt="Sambusa">
+                <div class="px-6 py-4">
+                    <div class="flex items-center justify-between">
+                        <div class="mr-12">
+                            <p class="font-bold text-xl">Sambusa</p>
+                        </div>
+                        <div>
+                            <p class="font-bold">20<span id="price">ETB</span></p>
+                        </div>  
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div class="mr-12">
+                            <p>Breakfast</p>
+                        </div>
+                        <button class="edit_btn"><img src="../IMAGES/edit-solid.svg" alt="edit button"></button> 
+                        <button class="delete_btn"><img src="../IMAGES/trash-solid.svg" alt="delete button"></button> 
+                    </div>
+                </div>    
+            </div>
+
+
+            <div class="w-1/4 mx-5 my-2 bg-white rounded overflow-hidden shadow-lg">
+                <img class="w-full h-48 object-cover" src="../IMAGES/190205174453-enkulal-firfir.webp" alt="Enkulal Firfir">
+                <div class="px-6 py-4">
+                    <div class="flex items-center justify-between">
+                        <div class="mr-12">
+                            <p class="font-bold text-xl">Enkulal Firfir</p>
+                        </div>
+                        <div>
+                            <p class="font-bold">80<span id="price">ETB</span></p>
+                        </div>  
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div class="mr-12">
+                            <p>Breakfast</p>
+                        </div>
+                        <button class="edit_btn"><img src="../IMAGES/edit-solid.svg" alt="edit button"></button> 
+                        <button class="delete_btn"><img src="../IMAGES/trash-solid.svg" alt="delete button"></button> 
+                    </div>
+                </div>    
+            </div>
+            <div class="w-1/4 mx-5 my-2 bg-white rounded overflow-hidden shadow-lg">
+                <img class="w-full h-48 object-cover" src="../IMAGES/sambusa.webp" alt="Sambusa">
+                <div class="px-6 py-4">
+                    <div class="flex items-center justify-between">
+                        <div class="mr-12">
+                            <p class="font-bold text-xl">Sambusa</p>
+                        </div>
+                        <div>
+                            <p class="font-bold">20<span id="price">ETB</span></p>
+                        </div>  
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div class="mr-12">
+                            <p>Breakfast</p>
+                        </div>
+                        <button class="edit_btn"><img src="../IMAGES/edit-solid.svg" alt="edit button"></button> 
+                        <button class="delete_btn"><img src="../IMAGES/trash-solid.svg" alt="delete button"></button> 
+                    </div>
+                </div>    
+            </div>
+
+
+            <div class="w-1/4 mx-5 my-2 bg-white rounded overflow-hidden shadow-lg">
+                <img class="w-full h-48 object-cover" src="../IMAGES/190205174453-enkulal-firfir.webp" alt="Enkulal Firfir">
+                <div class="px-6 py-4">
+                    <div class="flex items-center justify-between">
+                        <div class="mr-12">
+                            <p class="font-bold text-xl">Enkulal Firfir</p>
+                        </div>
+                        <div>
+                            <p class="font-bold">80<span id="price">ETB</span></p>
+                        </div>  
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div class="mr-12">
+                            <p>Breakfast</p>
+                        </div>
+                        <button class="edit_btn"><img src="../IMAGES/edit-solid.svg" alt="edit button"></button> 
+                        <button class="delete_btn"><img src="../IMAGES/trash-solid.svg" alt="delete button"></button> 
+                    </div>
+                </div>    
+            </div>
+            <div class="w-1/4 mx-5 my-2 bg-white rounded overflow-hidden shadow-lg">
+                <img class="w-full h-48 object-cover" src="../IMAGES/sambusa.webp" alt="Sambusa">
+                <div class="px-6 py-4">
+                    <div class="flex items-center justify-between">
+                        <div class="mr-12">
+                            <p class="font-bold text-xl">Sambusa</p>
+                        </div>
+                        <div>
+                            <p class="font-bold">20<span id="price">ETB</span></p>
+                        </div>  
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div class="mr-12">
+                            <p>Breakfast</p>
+                        </div>
+                        <button class="edit_btn"><img src="../IMAGES/edit-solid.svg" alt="edit button"></button> 
+                        <button class="delete_btn"><img src="../IMAGES/trash-solid.svg" alt="delete button"></button> 
+                    </div>
+                </div>    
+            </div>
+
+
+            <div class="w-1/4 mx-5 my-2 bg-white rounded overflow-hidden shadow-lg">
+                <img class="w-full h-48 object-cover" src="../IMAGES/190205174453-enkulal-firfir.webp" alt="Enkulal Firfir">
+                <div class="px-6 py-4">
+                    <div class="flex items-center justify-between">
+                        <div class="mr-12">
+                            <p class="font-bold text-xl">Enkulal Firfir</p>
+                        </div>
+                        <div>
+                            <p class="font-bold">80<span id="price">ETB</span></p>
+                        </div>  
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div class="mr-12">
+                            <p>Breakfast</p>
+                        </div>
+                        <button class="edit_btn"><img src="../IMAGES/edit-solid.svg" alt="edit button"></button> 
+                        <button class="delete_btn"><img src="../IMAGES/trash-solid.svg" alt="delete button"></button> 
+                    </div>
+                </div>    
+            </div>
+            <div class="w-1/4 mx-5 my-2 bg-white rounded overflow-hidden shadow-lg">
+                <img class="w-full h-48 object-cover" src="../IMAGES/sambusa.webp" alt="Sambusa">
+                <div class="px-6 py-4">
+                    <div class="flex items-center justify-between">
+                        <div class="mr-12">
+                            <p class="font-bold text-xl">Sambusa</p>
+                        </div>
+                        <div>
+                            <p class="font-bold">20<span id="price">ETB</span></p>
+                        </div>  
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div class="mr-12">
+                            <p>Breakfast</p>
+                        </div>
+                        <button class="edit_btn"><img src="../IMAGES/edit-solid.svg" alt="edit button"></button> 
+                        <button class="delete_btn"><img src="../IMAGES/trash-solid.svg" alt="delete button"></button> 
+                    </div>
+                </div>    
+            </div>
+
+            <div class="w-1/4 mx-5 my-2 bg-white rounded overflow-hidden shadow-lg">
+                <img class="w-full h-48 object-cover" src="../IMAGES/sambusa.webp" alt="Sambusa">
+                <div class="px-6 py-4">
+                    <div class="flex items-center justify-between">
+                        <div class="mr-12">
+                            <p class="font-bold text-xl">Sambusa</p>
+                        </div>
+                        <div>
+                            <p class="font-bold">20<span id="price">ETB</span></p>
+                        </div>  
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div class="mr-12">
+                            <p>Breakfast</p>
+                        </div>
+                        <button class="edit_btn"><img src="../IMAGES/edit-solid.svg" alt="edit button"></button> 
+                        <button class="delete_btn"><img src="../IMAGES/trash-solid.svg" alt="delete button"></button> 
+                    </div>
+                </div>    
+            </div>
+        </div>
+    </body>
+</html>
