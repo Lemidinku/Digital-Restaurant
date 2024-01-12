@@ -1,155 +1,181 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" type="image/x-icon" href="../IMAGES/favicon.png">
-        <title>Order-list</title>
-        <link rel="stylesheet" href="../dist/output.css">
-        <style>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="../IMAGES/favicon.png" />
+    <title>Order-list</title>
+    <link rel="stylesheet" href="../dist/output.css" />
+    <style>
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.4);
+      }
 
-            .modal {
-            display: none;
-            position: fixed;
-            z-index: 1;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0,0,0,0.4);
-            }
+      .modal-content {
+        background-color: #fefefe;
+        margin: 15% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 50%;
+      }
 
-            .modal-content {
-            background-color: #fefefe;
-            margin: 15% auto;
-            padding: 20px;
-            border: 1px solid #888;
-            width: 50%;
-            }
+      .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+      }
 
-            .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-            }
+      .close:hover,
+      .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+      }
+      #main_page {
+        background-color: #e4d5d5;
+      }
+      #top_logo {
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+      #dashboard {
+        width: 200%;
+        background-color: #f97350;
+        color: white;
+      }
+      #completed {
+        background-color: #f97350;
+      }
+      #pending {
+        background-color: gray;
+      }
+    </style>
+  </head>
+  <body class="flex bg-gray-100">
+    <aside class="bg-whte-800 text-black h-screen w-1/5">
+      <a href="../main/main-starter.html"
+        ><img
+          class="w-24"
+          id="top_logo"
+          src="../IMAGES/Logo-one.png"
+          alt="Logo"
+      /></a>
+      <div class="flex flex-col items-center justify-between h-full">
+        <nav class="text-left mt-8">
+          <a
+            href="dashboard.html"
+            class="block w-full py-2 px-4 text-sm font-bold"
+            id="dashboard"
+            >Dashboard</a
+          >
+          <a href="order-list.html" class="block py-2 px-4 text-sm"
+            >Order List</a
+          >
 
-            .close:hover,
-            .close:focus {
-            color: black;
-            text-decoration: none;
-            cursor: pointer;
-            }
-            #main_page {
-                background-color: #E4D5D5;
-            }
-            #top_logo {
-                position: absolute;
-                top: 0;
-                left: 0;
-            }
-            #dashboard {
-                width: 200%;
-                background-color: #F97350;
-                color: white;
-            }
-            #completed {
-                background-color: #F97350;
-            }
-            #pending {
-                background-color: gray;
-            }
-        </style>
-    </head>
-    <body class="flex bg-gray-100">
-        <aside class="bg-whte-800 text-black h-screen w-1/5">
-            <a href="../main/main-starter.html"><img class="w-24" id="top_logo" src="../IMAGES/Logo-one.png" alt="Logo"></a>
-            <div class="flex flex-col items-center justify-between h-full">
-                <nav class="text-left mt-8">
-                    <a href="dashboard.html" class="block w-full py-2 px-4 text-sm font-bold" id="dashboard">Dashboard</a>
-                    <a href="order-list.html" class="block py-2 px-4 text-sm">Order List</a>
-                    
-                    <a href="add_food.html" class="block py-2 px-4 text-sm"> Add Foods</a>
-                </nav>
+          <a href="add_food.html" class="block py-2 px-4 text-sm"> Add Foods</a>
+        </nav>
+      </div>
+    </aside>
+    <div class="flex flex-wrap w-4/5" id="main_page"></div>
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="bg-white p-8 rounded shadow-md w-96">
+          <h2 class="text-2xl font-semibold mb-6 text-center">
+            ADD Edited FOOD
+          </h2>
+          <form id="foodForm">
+            <div class="mb-4">
+              <label for="picture" class="block text-gray-600 font-medium"
+                >Picture <span class="text-red-800">*</span></label
+              >
+              <input
+                type="text"
+                id="picture"
+                name="picture"
+                accept="image/*"
+                class="w-full px-4 py-2 border rounded-md"
+                required
+              />
+              <img id="preview" class="mt-2 max-w-full hidden" />
             </div>
-        </aside>
-        <div class="flex flex-wrap w-4/5" id="main_page">
-           
-        </div>
-        <div id="myModal" class="modal">
-            <div class="modal-content">
-              <span class="close">&times;</span>
-              <div  class="bg-white p-8 rounded shadow-md w-96">
-                <h2 class="text-2xl font-semibold mb-6 text-center">ADD Edited FOOD</h2>
-    <form id="foodForm">
-    <div class="mb-4">
-        <label for="picture" class="block text-gray-600 font-medium">Picture <span class="text-red-800">*</span></label>
-        <input type="text" id="picture" name="picture" accept="image/*" class="w-full px-4 py-2 border rounded-md" required>
-        <img id="preview" class="mt-2 max-w-full hidden">
-    </div>
-    <div class="mb-4">
-        <label for="title" class="block text-gray-600 font-medium">Name <span class="text-red-800">*</span></label>
-        <input type="text" id="title" name="title" placeholder="Enter title" class="w-full px-4 py-2 border rounded-md" required>
-    </div>
-    <div class="mb-4">
-        <label for="price" class="block text-gray-600 font-medium">Price <span class="text-red-800">*</span></label>
-        <input type="text" id="price" name="price" placeholder="Enter price" class="w-full px-4 py-2 border rounded-md" required>
-    </div>
-    <div class="mb-6">
-        <div class="flex justify-between">
-            <div>
-                <label class="block text-gray-600">Kind</label>
-                <select multiple class="w-full p-2 border rounded-md mt-1" id="kindSelect">
-                    <option value="starter">starter</option>
-                    <option value="breakfast">breakfast</option>
-                    <option value="lunch">lunch</option>
-                    <option value="dinner">dinner</option>
-                    <option value="dessert">dessert</option>
-                </select>
+            <div class="mb-4">
+              <label for="title" class="block text-gray-600 font-medium"
+                >Name <span class="text-red-800">*</span></label
+              >
+              <input
+                type="text"
+                id="title"
+                name="title"
+                placeholder="Enter title"
+                class="w-full px-4 py-2 border rounded-md"
+                required
+              />
             </div>
-            <div>
-                <label class="block text-gray-600">Origin:</label>
-                <select class="w-full p-2 border rounded-md mt-1" id="orginSelect">
+            <div class="mb-4">
+              <label for="price" class="block text-gray-600 font-medium"
+                >Price <span class="text-red-800">*</span></label
+              >
+              <input
+                type="text"
+                id="price"
+                name="price"
+                placeholder="Enter price"
+                class="w-full px-4 py-2 border rounded-md"
+                required
+              />
+            </div>
+            <div class="mb-6">
+              <div class="flex justify-between">
+                <div>
+                  <label class="block text-gray-600">Origin:</label>
+                  <select
+                    class="w-full p-2 border rounded-md mt-1"
+                    id="orginSelect"
+                  >
                     <option value="ethiopia">Ethiopian</option>
                     <option value="french">French</option>
                     <option value="asian">Asian</option>
-                </select>
-            </div>
-        </div>
-        <div class="flex justify-between mt-4">
-            <div>
-                <label class="block text-gray-600">Fasting:</label>
-                <select class="w-full p-2 border rounded-md mt-1" id="fastingSelect">
-                    <option value=true >Fasting</option>
-                    <option value=false >Non-Fasting</option>
-                </select>
-            </div>
-            <div>
-                <label class="block text-gray-600">Allergies:</label>
-                <select class="w-full p-2 border rounded-md mt-1" id="allergiesSelect">
-                    <option value="milk">Milk</option>
-                    <option value="eggs">Eggs</option>
-                    <option value="peanut">Peanuts</option>
-                    <option value="soy">Soy</option>
-                    <option value="wheat">Wheat</option>
-                    <option value="Tree nuts">Tree nuts</option>
-                </select>
-            </div>
-        </div>
-    </div>
-    <div class="mb-6">
-        <label for="description" class="block text-gray-600 font-medium">Description <span class="text-red-800">*</span></label>
-        <textarea id="description" name="description" rows="4" placeholder="Enter description" class="w-full px-4 py-2 border rounded-md" required></textarea>
-    </div>
-    <div id="editData">
-        <button  type="submit" class="w-full text-black font-semibold p-2 rounded-3xl mb-10" id="add_food_btn">Add edit food</button>
-    </div>
-   
-</form>
+                  </select>
+                </div>
               </div>
             </div>
-          </div>
-        <script src="./dashboard.js"></script>
-    </body>
+            <div class="mb-6">
+              <label for="description" class="block text-gray-600 font-medium"
+                >Description <span class="text-red-800">*</span></label
+              >
+              <textarea
+                id="description"
+                name="description"
+                rows="4"
+                placeholder="Enter description"
+                class="w-full px-4 py-2 border rounded-md"
+                required
+              ></textarea>
+            </div>
+            <div id="editData">
+              <button
+                type="submit"
+                class="w-full text-black font-semibold p-2 rounded-3xl mb-10"
+                id="add_food_btn"
+              >
+                Add edit food
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="./dashboard.js"></script>
+  </body>
 </html>

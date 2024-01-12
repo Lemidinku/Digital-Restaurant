@@ -32,6 +32,10 @@ export class AuthService {
 
       return { success: true, message: 'User created successfully' };
     } catch (error) {
+      console.log(error.code)
+      if (error.code === 11000) {
+        return {success: false, message: "Credintials already taken"}
+      }
       return { success: false, message: error.message };
     }
   }
