@@ -61,8 +61,4 @@ export class AuthService {
       throw new Error(`Error finding user with id: ${error.message}`);
     }
   }
-
-  remove(id: number) {
-    return `This action removes a #${id} auth`;
-  }
 }
