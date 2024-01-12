@@ -3,20 +3,15 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" type="image/x-icon" href="IMAGES/favicon.png">
+        <link rel="icon" type="image/x-icon" href="../IMAGES/favicon.png">
         <title>Checkout</title>
-        <link rel="stylesheet" href="dist/output.css">
-        <style>
-            #submit {
-                background-color: #F97350;
-            }
-        </style>
+        <script src="https://cdn.tailwindcss.com"></script>
     </head>
-    <body class="h-full bg-cover bg-center" style="background-image: url('IMAGES/51951042270_78ea1e8590_h.7.jpg');" id="checkout">
+    <body class="h-full bg-cover bg-center" style="background-image: url('../../IMAGES/51951042270_78ea1e8590_h.7.jpg');" id="checkout">
         <div class="h-screen flex items-center justify-center">
             <div class="bg-white p-8 rounded shadow-md w-96">
                 <h2 class="text-2xl font-semibold mb-6 text-center">Checkout</h2>
-                <form>
+                <form id="submitForm">
                     <div class="mb-4">
                         <label for="number" class="block text-sm font-medium text-gray-600">Phone Number <span class="text-red-800">*</span></label>
                         <input type="text" id="phone_number" class="mt-1 p-2 w-full border rounded-md" required>
@@ -31,11 +26,13 @@
                         <textarea name="textarea" class="mt-1 p-2 w-full border rounded-md" id="checkout_textarea" cols="30" rows="10"></textarea>
                         <input type="text" id="description" >
                     </div>
-                    <button class="w-28 text-white font-semibold p-2 rounded-3xl mb-10 mx-4" id="submit">Submit</button>
-                    <button class="w-28 text-white font-semibold p-2 rounded-3xl mb-10 mx-4" id="submit"><a href="main/main-starter.html">Cancel</a></button> 
+                    <button class="w-28 bg-orange-500 text-white font-semibold p-2 rounded-3xl mb-10 mx-4" id="submit_form">Submit</button>
+                    <button class="w-28 bg-orange-500 text-white font-semibold p-2 rounded-3xl mb-10 mx-4" id="cancel_order"><a href="main/main-starter.html">Cancel</a></button> 
                 </form>
             </div>
         </div>
+
+        <script src="./checkout.js"></script>
     </body>    
        
 </html>
