@@ -27,7 +27,7 @@ export class OrdersService {
   async findAll() {
     try {
       const orders = await this.OrderModel.find()
-        .sort({ createdAt: -1 })
+        .sort({ updatedAt: 1 })
         .exec();
       return orders;
     } catch (error) {
