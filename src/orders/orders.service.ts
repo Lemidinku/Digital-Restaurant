@@ -23,21 +23,10 @@ export class OrdersService {
     }
   }
 
-  async filter(id: object) {
-    try {
-      const orders = await this.OrderModel.find(id)
-        .sort({ updatedAt: -1 })
-        .exec();
-      return orders;
-    } catch (error) {
-      throw new Error(`Error finding orders: ${error.message}`);
-    }
-  }
-
   async findAll() {
     try {
       const orders = await this.OrderModel.find()
-        .sort({ updatedAt: -1 })
+        .sort({ createdAt: -1 })
         .exec();
       return orders;
     } catch (error) {
@@ -46,6 +35,7 @@ export class OrdersService {
   }
 
   async findOne(id: number) {
+    console.log('id', id);
     try {
       return await this.OrderModel.findOne({ id }).exec();
     } catch (error) {
@@ -68,7 +58,7 @@ export class OrdersService {
 
   async remove(id: number) {
     try {
-      return await this.OrderModel.findOneAndDelete({ id }).exec();
+      return await this.OrderModel.deleteOne({ id }).exec();
     } catch (error) {
       throw new Error(`Error deleting order with id ${id}: ${error.message}`);
     }

@@ -36,12 +36,46 @@ export class MealsService {
     }
   }
 
-  findAll() {
-    return this.MealModel.find();
+  async findAll(queryParams): Promise<any[]> {
+    try {
+      const filter: any = {};
+      let filteredTypes = null;
+
+      if (queryParams.origin) {
+        filter.origin = queryParams.origin;
+      }
+
+      if (queryParams.fasting === 'true') {
+        filter.fasting = 'true';
+      }
+
+      if (queryParams.allergy) {
+        filter.allergy = queryParams.allergy;
+      }
+
+      if (queryParams.types) {
+        console.log('queryParams.types', queryParams.types);
+        filteredTypes = [queryParams.types.split(',')];
+      }
+
+      const meals = await this.MealModel.find({
+        ...filter,
+        types: { $in: filteredTypes },
+      }).exec();
+
+      // const meals = await this.MealModel.find(filter).exec();
+      return meals;
+    } catch (error) {
+      throw new Error(`Error finding all meals: ${error.message}`);
+    }
   }
 
-  findOne(id: number) {
-    return this.MealModel.findOne({ id: id });
+  async findOne(id: number) {
+    try {
+      return this.MealModel.findOne({ id: id });
+    } catch (error) {
+      throw new Error(`Error finding meal with id ${id}: ${error.message}`);
+    }
   }
 
   remove(id: number) {
