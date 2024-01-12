@@ -56,7 +56,7 @@ export class AuthService {
         phone: user.phone,
         roles: user.roles,
       });
-      return { success: true, token: token };
+      return { success: true, roles:user.roles, token: token };
     } catch (error) {
       throw new Error(`Error finding user with id: ${error.message}`);
     }

@@ -11,12 +11,12 @@ document.getElementById('submit_form').addEventListener('click',  function (even
     token = localStorage.getItem('token')
 
     let totalPrice = 0;
-    const mealsArray = [];
+    const mealsArray = {};
     for (const mealId in selectedMeals) {
         const meal = selectedMeals[mealId];
         totalPrice += Number(meal.price);
-        mealsArray.push({ [meal.name]: meal.amount });
-    }
+        mealsArray[meal.name] = meal.amount };
+
 
     const formData = {
         phone: phoneNumber,
@@ -33,7 +33,7 @@ document.getElementById('submit_form').addEventListener('click',  function (even
         } , 
         body: JSON.stringify(formData)
     }).then((res)=>{
-        localStorage.removeItem('selectedMeal')
+        // localStorage.removeItem('selectedMeal')
     }).catch((err)=>{
         console.log(err)
 

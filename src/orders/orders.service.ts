@@ -19,7 +19,7 @@ export class OrdersService {
       });
       return createdOrder.save();
     } catch (error) {
-      throw new Error(`Error updating user with id: ${error.message}`);
+      throw new Error(`Error ucreating order: ${error.message}`);
     }
   }
 
